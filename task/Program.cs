@@ -42,12 +42,12 @@ string[] RotateElemOfArr(string[] arr)
     }
     return arrayTwo;
 }
-if (GetSizeOfSecondArray(arrayOne) == 0){Console.WriteLine("искомых элементов строкового масива для переноса в новый массив - нет");}
+if (GetSizeOfSecondArray(arrayOne) == 0){Console.WriteLine("Искомых элементов строкового масива для переноса в новый массив - нет");}
 else
 {
 string[] arrayTwo = RotateElemOfArr(arrayOne);
 Console.Clear();
-    Console.WriteLine($"Это массив заполненный рандомными занчениями, и новый массив, длиной не более трёх символов:");
+    Console.WriteLine($"Это массив заполненный рандомными значениями, и новый массив, длиной не более трёх символов отобранный из рандомного:");
     Console.WriteLine();
     Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
     Console.WriteLine();
