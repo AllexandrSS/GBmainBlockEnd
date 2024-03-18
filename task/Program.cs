@@ -6,14 +6,14 @@ string[] arrayOne = new string[size];
 fillRandArr(arrayOne);
 void fillRandArr(string[] arr)
 {
-    Random rand = new Random();
+    var rnd = new Random();
     string Symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
     for (int i = 0; i < size; i++)
     {
-        int randElemSize = rand.Next(lover, upper);
+        int randElemSize = rnd.Next(lover, upper);
         for (int j = 0; j < randElemSize; j++)
         {
-            arr[i] += Symbols[rand.Next(0,Symbols.Length)];
+            arr[i] += Symbols[rnd.Next(0,Symbols.Length)];
         }        
     }
 }
@@ -29,7 +29,7 @@ int getSizeOfSecondArray(string[] arr)
     }
     return secondSize;
 }
-string[] RotateElemOfArr(string[] arr)
+string[] moveElemOfArr(string[] arr)
 {
     string[] arrayTwo = new string[getSizeOfSecondArray(arrayOne)];
     for (int i = 0, j = 0; i < size; i++)
@@ -45,9 +45,9 @@ string[] RotateElemOfArr(string[] arr)
 if (getSizeOfSecondArray(arrayOne) == 0){Console.WriteLine("Искомых элементов масива для переноса в новый массив - нет");}
 else
 {
-string[] arrayTwo = RotateElemOfArr(arrayOne);
+string[] arrayTwo = moveElemOfArr(arrayOne);
 // Console.Clear();
-Console.WriteLine($"Это массив заполненный рандомными значениями, и новый массив, длиной не более трёх символов отобранный из рандомного:");
+Console.WriteLine($"Это массив заполненный рандомными значениями, и новый массив, длиной не более {n} символов отобранный из рандомного:");
 Console.WriteLine();
 Console.WriteLine($"[{String.Join(", ", arrayOne)}] -> [{String.Join(", ", arrayTwo)}]");
 Console.WriteLine();
